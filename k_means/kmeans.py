@@ -93,15 +93,16 @@ def find_distance_between_points(a, b):
 
 def k_means(data):
     centers = generate_centers(data)
-    draw_with_centers(data, centers)
+    # draw_with_centers(data, centers)
     shortest_distance_indexes = find_shortest_distances(data, centers)
     old_distances = None
     while shortest_distance_indexes != old_distances:
-        draw_with_different_colors(shortest_distance_indexes, data)
+        # draw_with_different_colors(shortest_distance_indexes, data)
         new_centers = update_centers(data, shortest_distance_indexes)
         old_distances = shortest_distance_indexes
         shortest_distance_indexes = find_shortest_distances(data, new_centers)
-    return zip(shortest_distance_indexes, data)
+    # draw_with_different_colors(shortest_distance_indexes, data)
+    return shortest_distance_indexes, data
 
 
 def create_array(data, index):
@@ -134,6 +135,6 @@ def draw_with_different_colors(shortest_distance_indexes, data):
     plt.show()
 
 
-data = create_data()
-draw(data, 'Исходные значения')
-k_means(data)
+# data = create_data()
+# draw(data, 'Исходные значения')
+# k_means(data)
